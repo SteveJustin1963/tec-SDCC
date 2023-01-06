@@ -23,7 +23,7 @@ Again You can also use the -o option to specify an output file name, or the -c o
 ## peripherals supported
 not full list
 - ADC (analog-to-digital converter) ```adc.c```
-- Accelerometer ```accelerometer.c```
+- Accelerometer ```accel.c```
 - Audio codec
 - Barometer
 - Bluetooth module
