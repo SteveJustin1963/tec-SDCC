@@ -35,8 +35,8 @@ not full list
 - GSM/GPRS modem
 - Gyroscope
 - Humidity sensor
-- I2C bus ```i2c-s.c and i2c-r.c```
-- Interrupts, ```nmi.c```
+- I2C bus ```i2c-s.c, i2c-r.c```
+- Interrupts, ```nmi.c, mask.c, trap.c```
 - IR (infrared) receiver/transmitter
 - LCD display
 - Light sensor
