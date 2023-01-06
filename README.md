@@ -22,21 +22,21 @@ Again You can also use the -o option to specify an output file name, or the -c o
 
 ## peripherals supported
 not full list
-- ADC (analog-to-digital converter)
-- Accelerometer
+- ADC (analog-to-digital converter) ```adc.c```
+- Accelerometer ```accelerometer.c```
 - Audio codec
 - Barometer
 - Bluetooth module
-- DAC (digital-to-analog converter)
+- DAC (digital-to-analog converter) ```dac.c```
 - DMA (direct memory access) controller
 - Ethernet interface
-- GPIO (general-purpose input/output)
+- GPIO (general-purpose input/output) ```gpio.c```
 - GPS module
 - GSM/GPRS modem
 - Gyroscope
 - Humidity sensor
-- I2C bus
-- Interrupts
+- I2C bus ```i2c-s.c and i2c-r.c```
+- Interrupts, ```nmi.c```
 - IR (infrared) receiver/transmitter
 - LCD display
 - Light sensor
@@ -47,13 +47,13 @@ not full list
 - Parallel port
 - Pressure sensor
 - Proximity sensor
-- PWM (pulse-width modulation)
-- Real-time clock
+- PWM (pulse-width modulation) ```pwm.c```
+- Real-time clock ```rtc.```
 - SD card interface
-- Serial port
-- Servo motor controller
+- Serial port ```serial.c```
+- Servo motor controller 
 - Speech recognition module
-- Stepper motor controller
+- Stepper motor controller ```step```
 - Temperature sensor
 - Timers
 - Touchscreen
@@ -63,31 +63,6 @@ not full list
 - Zigbee module
 
 
-
-
-to use a serial port, 
-you might use the serial.h library and functions such as serial_init(), serial_putchar(), and serial_getchar().
-```serial.c```
-
-## ADC (analog-to-digital converter) 
-This code initializes the ADC and then reads the value from ADC channel 0 in an infinite loop. It prints the value to the console and delays for 500 ms before reading the value again.
-```adc.c```
-
-
-
-## DAC (digital-to-analog converter) 
-is much the same, This code initializes the DAC and then writes all possible DAC values in an infinite loop, with a 50 ms delay between each value.
-```dac.c```
-
-
-##  I2C 
-send: This code initializes the I2C bus and then sends a message to the device at address 0x01 in an infinite loop, with a 500 ms delay between each message.
-```i2c-s.c```
-read: This code initializes the I2C bus and then reads a message from the device at address 0x01 in an infinite loop, with a 500 ms delay between each read. The received message is printed to the console.
-```i2c-r.c```
-
-## PWM (pulse-width modulation) 
-```pwm.c```
 
 
 
