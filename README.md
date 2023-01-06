@@ -20,8 +20,52 @@ To use SDCC with the Z80, you will need to specify the --model-z80 flag when com
 use the sdcc command followed by the source file name and the ```-mz80``` option.   ```sdcc -mz80 myprogram.c```. 
 Again You can also use the -o option to specify an output file name, or the -c option to just compile the program without linking.
 
+## peripherals supported
+not full list
+- ADC (analog-to-digital converter)
+- Accelerometer
+- Audio codec
+- Barometer
+- Bluetooth module
+- DAC (digital-to-analog converter)
+- DMA (direct memory access) controller
+- Ethernet interface
+- GPIO (general-purpose input/output)
+- GPS module
+- GSM/GPRS modem
+- Gyroscope
+- Humidity sensor
+- I2C bus
+- Interrupts
+- IR (infrared) receiver/transmitter
+- LCD display
+- Light sensor
+- Magnetometer
+- Motor controller
+- NFC (near field communication) module
+- OLED display
+- Parallel port
+- Pressure sensor
+- Proximity sensor
+- PWM (pulse-width modulation)
+- Real-time clock
+- SD card interface
+- Serial port
+- Servo motor controller
+- Speech recognition module
+- Stepper motor controller
+- Temperature sensor
+- Timers
+- Touchscreen
+- Touchscreen controller
+- USB interface
+- Watchdog timer
+- Zigbee module
 
-## to use a serial port, 
+
+
+
+to use a serial port, 
 you might use the serial.h library and functions such as serial_init(), serial_putchar(), and serial_getchar().
 ```
 #include <serial.h>
