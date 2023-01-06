@@ -67,141 +67,27 @@ not full list
 
 to use a serial port, 
 you might use the serial.h library and functions such as serial_init(), serial_putchar(), and serial_getchar().
-```
-#include <serial.h>
-
-void main() {
-    serial_init(9600);  // Initialize the serial port with a baud rate of 9600
-
-    serial_putchar('H');  // Send the character 'H' over the serial port
-    serial_putchar('e');  // Send the character 'e' over the serial port
-    serial_putchar('l');  // Send the character 'l' over the serial port
-    serial_putchar('l');  // Send the character 'l' over the serial port
-    serial_putchar('o');  // Send the character 'o' over the serial port
-
-    char c = serial_getchar();  // Wait for a character to be received over the serial port
-    serial_putchar(c);  // Send the received character back to the sender
-}
-```
-make a loop
-
-```
-#include <serial.h>
-
-void main() {
-    serial_init(9600);  // Initialize the serial port with a baud rate of 9600
-
-    char message[] = "Hello";  // Create an array with the message to send
-    int i;  // Declare a variable to use in the loop
-
-    for (i = 0; i < 5; i++) {  // Loop through the characters in the message
-        serial_putchar(message[i]);  // Send the character over the serial port
-    }
-
-    char c = serial_getchar();  // Wait for a character to be received over the serial port
-    serial_putchar(c);  // Send the received character back to the sender
-}
-```
+```serial.c```
 
 ## ADC (analog-to-digital converter) 
 This code initializes the ADC and then reads the value from ADC channel 0 in an infinite loop. It prints the value to the console and delays for 500 ms before reading the value again.
-```
-#include <adc.h>
+```adc.c```
 
-void main() {
-    adc_init();  // Initialize the ADC
 
-    while (1) {  // Loop indefinitely
-        int value = adc_read(0);  // Read the value from ADC channel 0
-        printf("ADC value: %d\n", value);  // Print the value to the console
-        delay_ms(500);  // Delay for 500 ms
-    }
-}
-```
+
 ## DAC (digital-to-analog converter) 
 is much the same, This code initializes the DAC and then writes all possible DAC values in an infinite loop, with a 50 ms delay between each value.
-```
-#include <dac.h>
+```dac.c```
 
-void main() {
-    dac_init();  // Initialize the DAC
-
-    while (1) {  // Loop indefinitely
-        for (int i = 0; i < 256; i++) {  // Loop through all possible DAC values
-            dac_write(i);  // Write the DAC value
-            delay_ms(50);  // Delay for 50 ms
-        }
-    }
-}
-```
 
 ##  I2C 
 send: This code initializes the I2C bus and then sends a message to the device at address 0x01 in an infinite loop, with a 500 ms delay between each message.
-```
-#include <i2c.h>
-
-void main() {
-    i2c_init();  // Initialize the I2C bus
-
-    while (1) {  // Loop indefinitely
-        // Send a message to the device at address 0x01
-        i2c_start();
-        i2c_write(0x01);  // Send the address of the device (with the write bit set)
-        i2c_write(0xAA);  // Send a message byte
-        i2c_stop();
-
-        delay_ms(500);  // Delay for 500 ms
-    }
-}
-```
+```i2c-s.c```
 read: This code initializes the I2C bus and then reads a message from the device at address 0x01 in an infinite loop, with a 500 ms delay between each read. The received message is printed to the console.
+```i2c-r.c```
 
-```
-#include <i2c.h>
-
-void main() {
-    i2c_init();  // Initialize the I2C bus
-
-    while (1) {  // Loop indefinitely
-        // Read a message from the device at address 0x01
-        i2c_start();
-        i2c_write(0x01);  // Send the address of the device (with the write bit set)
-        i2c_write(0x00);  // Send the register address to read from
-        i2c_stop();
-        i2c_start();
-        i2c_write(0x01 | 0x01);  // Send the address of the device (with the read bit set)
-        char c = i2c_read(0);  // Read a byte from the device
-        i2c_stop();
-
-        printf("Received: %c\n", c);  // Print the received byte to the console
-
-        delay_ms(500);  // Delay for 500 ms
-    }
-}
-```
 ## PWM (pulse-width modulation) 
-
-```
-#include <pwm.h>
-
-void main() {
-    pwm_init(50);  // Initialize the PWM with a frequency of 50 Hz
-
-    while (1) {  // Loop indefinitely
-        for (int i = 0; i <= 100; i++) {  // Loop through all possible duty cycles
-            pwm_write(i);  // Set the duty cycle
-            delay_ms(50);  // Delay for 50 ms
-        }
-    }
-}
-```
-duty cycle 20:80
-```
-for (int i = 20; i <= 80; i++) {  // Loop through the range of duty cycles
-    pwm_write(i);  // Set the duty cycle
-    delay_ms(50);  // Delay for 50 ms
-}
-```
+```pwm.c```
 
 
 
