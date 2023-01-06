@@ -15,3 +15,35 @@ void main() {
         delay_ms(500);  // Delay for 500 ms
     }
 }
+
+
+\\\\\\\\\\\\
+forth
+
+\ Include any required libraries or header files here
+
+: accelerometer_init  \ Initialize the accelerometer
+  \ Implementation goes here
+;
+
+: accelerometer_read  \ Read the acceleration values
+  \ x y z  \ Declare local variables
+  \ Implementation goes here
+;
+
+: delay_ms  \ Delay for the given number of milliseconds
+  \ ms  \ Declare local variable
+  \ Implementation goes here
+;
+
+: main
+  accelerometer_init
+  begin
+    s" Acceleration: X=" . x . cr
+    accelerometer_read x y z
+    s" Y=" . y . cr
+    s" Z=" . z . cr
+    500 ms
+  again
+;
+\\\\\\\\\\\\
